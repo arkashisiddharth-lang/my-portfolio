@@ -1,0 +1,115 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  place-items: center;
+  position: relative;
+  opacity: 1;
+  height: auto;
+  width: var(--cWidth);
+  margin: auto;
+}
+.about-me {
+  padding: 50px 0px;
+  padding-bottom: 0;
+  width: 500px;
+  max-width: calc(100% - 15px);
+}
+.about-me h3 {
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  font-weight: 400;
+  color: var(--accentColor);
+}
+
+.about-me p {
+  font-size: 33px;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 1px;
+}
+
+.about-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 16px 18px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accentColor);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.about-card h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accentColor);
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.about-card p {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.3px !important;
+  margin: 0 !important;
+  color: #eaeaea;
+}
+
+@media only screen and (min-width: 600px) {
+  .about-section {
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    width: 500px;
+    max-width: calc(100% - 70px);
+    transform: translateY(0%);
+  }
+  .about-section {
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .about-section {
+    width: var(--cWidth);
+    justify-content: right;
+    max-width: 1920px;
+    height: var(--vh);
+    padding: 0px;
+    opacity: 1;
+  }
+  .about-me {
+    padding: 0px;
+    width: 50%;
+  }
+  .about-me > p.para {
+    font-size: 1.45vw;
+    line-height: 1.85vw;
+  }
+  .about-card p {
+    font-size: 0.9vw !important;
+    line-height: 1.3vw !important;
+  }
+}
+@media only screen and (min-width: 1950px) {
+  .about-me > p.para {
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+  }
+}
