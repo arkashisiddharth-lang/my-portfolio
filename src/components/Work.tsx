@@ -4,83 +4,82 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const projects = [
   {
-    title: "Android Mobile Application",
-    category: "Mobile Development",
-    tools: "Java, Android SDK, XML Layouts, SQLite",
+    title: "Liluu Salon",
+    category: "Salon & Beauty Website",
+    tools: "React, Vite, Responsive UI, Modern Animations",
+    image: "/images/placeholder.webp",
+    link: "https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
+  },
+  {
+    title: "Moon Cafe",
+    category: "Café & Restaurant Website",
+    tools: "React, Vite, Responsive Design, Interactive UI",
     image: "/images/placeholder.webp",
   },
   {
-    title: "Full-Stack Web Portal",
-    category: "Web Development",
-    tools: "HTML5, CSS3, JavaScript, MySQL, Web Solutions",
+    title: "Jewellery E-commerce",
+    category: "Full-Stack E-commerce",
+    tools: "React, Supabase, Product Management, Admin Dashboard",
     image: "/images/placeholder.webp",
   },
   {
-    title: "Data Analysis & IT Solutions",
-    category: "Software & Data Analytics",
-    tools: "Python, Data Processing, IT Workflows, Automation",
+    title: "Business Website",
+    category: "Business & Corporate",
+    tools: "Modern UI, Responsive Design, Conversion-focused Sections",
     image: "/images/placeholder.webp",
   },
   {
-    title: "Creative Graphic & Web Design",
-    category: "Graphic & Web Design",
-    tools: "Graphic Design, UI/UX, Visual Assets, Layouts",
-    image: "/images/placeholder.webp",
-  },
-  {
-    title: "Database Management System",
-    category: "Database Architecture",
-    tools: "MySQL, Schema Design, Java, Relational Queries",
-    image: "/images/placeholder.webp",
-  },
-  {
-    title: "Core Software & Algorithms",
-    category: "Software Engineering",
-    tools: "C, C++, Data Structures, Problem Solving",
+    title: "Premium Web Experience",
+    category: "Creative Web Development",
+    tools: "React, GSAP, 3D/Interactive UI, Motion Design",
     image: "/images/placeholder.webp",
   },
 ];
 
 const Work = () => {
   useGSAP(() => {
-    let translateX: number = 0;
+    let translateX = 0;
 
     function setTranslateX() {
-      const box = document.getElementsByClassName("work-box");
-      if (!box.length) return;
-      const rectLeft = document
-        .querySelector(".work-container")!
-        .getBoundingClientRect().left;
-      const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-      let padding: number =
-        parseInt(window.getComputedStyle(box[0]).padding) / 2;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
+      const boxes = document.getElementsByClassName("work-box");
+      const container = document.querySelector(".work-container");
+
+      if (!boxes.length || !container) return;
+
+      const rectLeft = container.getBoundingClientRect().left;
+      const rect = boxes[0].getBoundingClientRect();
+      const parentWidth = boxes[0].parentElement?.getBoundingClientRect().width ?? 0;
+      const padding = parseInt(window.getComputedStyle(boxes[0]).padding) / 2;
+
+      translateX = Math.max(
+        0,
+        rect.width * boxes.length - (rectLeft + parentWidth) + padding
+      );
     }
 
     setTranslateX();
 
-    let timeline = gsap.timeline({
+    const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
-        end: `+=${translateX}`, // Use actual scroll width
+        end: () => `+=${translateX}`,
         scrub: true,
         pin: true,
         id: "work",
+        invalidateOnRefresh: true,
       },
     });
 
     timeline.to(".work-flex", {
-      x: -translateX,
+      x: () => -translateX,
       ease: "none",
     });
 
-    // Clean up (optional, good practice)
     return () => {
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
@@ -93,22 +92,29 @@ const Work = () => {
         <h2>
           My <span>Work</span>
         </h2>
+
         <div className="work-flex">
           {projects.map((project, index) => (
-            <div className="work-box" key={index}>
+            <div className="work-box" key={project.title}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
+                  <h3>{String(index + 1).padStart(2, "0")}</h3>
 
                   <div>
                     <h4>{project.title}</h4>
                     <p>{project.category}</p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
+
+                <h4>Tools & Features</h4>
                 <p>{project.tools}</p>
               </div>
-              <WorkImage image={project.image} alt={project.title} />
+
+              <WorkImage
+                image={project.image}
+                alt={project.title}
+                link={project.link}
+              />
             </div>
           ))}
         </div>
