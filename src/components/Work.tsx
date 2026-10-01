@@ -18,8 +18,8 @@ const projects = [
     title: "Moon Cafe",
     category: "Premium Cafe & Hospitality Website",
     tools: "React, Vite, GSAP, ScrollTrigger, Responsive UI",
-    image: "https://image.thum.io/get/width/1920/crop/875/https://mooncafedemo-k295bvekf-arkashisiddharth-7090s-projects.vercel.app",
-    link: "https://mooncafedemo-k295bvekf-arkashisiddharth-7090s-projects.vercel.app",
+    image: "https://image.thum.io/get/width/1920/crop/875/https://moon-cafe-three.vercel.app",
+    link: "https://moon-cafe-three.vercel.app",
   },
 ];
 
