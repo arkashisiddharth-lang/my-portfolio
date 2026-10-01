@@ -11,8 +11,7 @@ const projects = [
     title: "Liluu Salon",
     category: "Salon & Beauty Website",
     tools: "React, Vite, Responsive UI, Modern Animations",
-    image:
-      "https://image.thum.io/get/width/1920/crop/875/https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
+    image: "/images/liluu-salon.jpg",
     link: "https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
   },
 ];
