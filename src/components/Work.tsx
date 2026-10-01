@@ -12,24 +12,8 @@ const projects = [
     category: "Salon & Beauty Website",
     tools: "React, Vite, Responsive UI, Modern Animations",
     image:
-      "https://image.thum.io/get/width/1400/crop/900/https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
+      "https://image.thum.io/get/width/1920/crop/875/https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
     link: "https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
-  },
-  {
-    title: "Moon Cafe",
-    category: "Café & Restaurant Website",
-    tools: "React, Vite, Responsive Design, Interactive UI",
-    image:
-      "https://image.thum.io/get/width/1400/crop/900/https://mooncafedemo-k295bvekf-arkashisiddharth-7090s-projects.vercel.app",
-    link: "https://mooncafedemo-k295bvekf-arkashisiddharth-7090s-projects.vercel.app",
-  },
-  {
-    title: "Hub",
-    category: "Modern Web Experience",
-    tools: "Responsive UI, Interactive Sections, Modern Web Design",
-    image:
-      "https://image.thum.io/get/width/1400/crop/900/https://hub-cfvzgyq62-arkashisiddharth-7090s-projects.vercel.app",
-    link: "https://hub-cfvzgyq62-arkashisiddharth-7090s-projects.vercel.app",
   },
 ];
 
