@@ -11,32 +11,25 @@ const projects = [
     title: "Liluu Salon",
     category: "Salon & Beauty Website",
     tools: "React, Vite, Responsive UI, Modern Animations",
-    image: "/images/placeholder.webp",
+    image:
+      "https://image.thum.io/get/width/1400/crop/900/https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
     link: "https://liluu-salon-8hn6wu5z6-arkashisiddharth-7090s-projects.vercel.app",
   },
   {
     title: "Moon Cafe",
     category: "Café & Restaurant Website",
     tools: "React, Vite, Responsive Design, Interactive UI",
-    image: "/images/placeholder.webp",
+    image:
+      "https://image.thum.io/get/width/1400/crop/900/https://mooncafedemo-k295bvekf-arkashisiddharth-7090s-projects.vercel.app",
+    link: "https://mooncafedemo-k295bvekf-arkashisiddharth-7090s-projects.vercel.app",
   },
   {
-    title: "Jewellery E-commerce",
-    category: "Full-Stack E-commerce",
-    tools: "React, Supabase, Product Management, Admin Dashboard",
-    image: "/images/placeholder.webp",
-  },
-  {
-    title: "Business Website",
-    category: "Business & Corporate",
-    tools: "Modern UI, Responsive Design, Conversion-focused Sections",
-    image: "/images/placeholder.webp",
-  },
-  {
-    title: "Premium Web Experience",
-    category: "Creative Web Development",
-    tools: "React, GSAP, 3D/Interactive UI, Motion Design",
-    image: "/images/placeholder.webp",
+    title: "Hub",
+    category: "Modern Web Experience",
+    tools: "Responsive UI, Interactive Sections, Modern Web Design",
+    image:
+      "https://image.thum.io/get/width/1400/crop/900/https://hub-cfvzgyq62-arkashisiddharth-7090s-projects.vercel.app",
+    link: "https://hub-cfvzgyq62-arkashisiddharth-7090s-projects.vercel.app",
   },
 ];
 
@@ -52,8 +45,10 @@ const Work = () => {
 
       const rectLeft = container.getBoundingClientRect().left;
       const rect = boxes[0].getBoundingClientRect();
-      const parentWidth = boxes[0].parentElement?.getBoundingClientRect().width ?? 0;
-      const padding = parseInt(window.getComputedStyle(boxes[0]).padding) / 2;
+      const parentWidth =
+        boxes[0].parentElement?.getBoundingClientRect().width ?? 0;
+      const padding =
+        parseInt(window.getComputedStyle(boxes[0]).padding) / 2;
 
       translateX = Math.max(
         0,
